@@ -14,7 +14,7 @@ public class Time implements Serializable {
     private Long id;
 
     @Column(length = 255)
-    private String time_nome;
+    private String time;
 
     @OneToMany(mappedBy = "time")
     private Set<Jogador> jogadores;
@@ -27,12 +27,12 @@ public class Time implements Serializable {
         this.id = id;
     }
 
-    public String getTime_nome() {
-        return time_nome;
+    public String getTime() {
+        return time;
     }
 
-    public void setTime_nome(String time_nome) {
-        this.time_nome = time_nome;
+    public void setTime(String time_nome) {
+        this.time = time_nome;
     }
 
     public Set<Jogador> getJogadores() {
@@ -47,7 +47,7 @@ public class Time implements Serializable {
     public String toString() {
         return "Time{" +
                 "id=" + id +
-                ", time_nome='" + time_nome + '\'' +
+                ", time_nome='" + time + '\'' +
                 ", jogadores=" + jogadores +
                 '}';
     }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PoteServiceImpl implements PoteService {
@@ -17,5 +18,15 @@ public class PoteServiceImpl implements PoteService {
     @Override
     public List<Pote> getAllPotes() {
         return this.poteRepository.findAll();
+    }
+
+    @Override
+    public Optional<Pote> findPoteByPote(String nome) {
+        return this.poteRepository.findByPote(nome);
+    }
+
+    @Override
+    public Optional<Pote> findPoteById(Long id) {
+        return this.poteRepository.findById(id);
     }
 }

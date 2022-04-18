@@ -14,7 +14,7 @@ public class Pote implements Serializable {
     private Long id;
 
     @Column(length = 255)
-    private String pote_nome;
+    private String pote;
 
     @OneToMany(mappedBy = "pote")
     private Set<Jogador> jogadores;
@@ -30,12 +30,12 @@ public class Pote implements Serializable {
         this.id = id;
     }
 
-    public String getPoteNome() {
-        return pote_nome;
+    public String getPote() {
+        return pote;
     }
 
-    public void setPoteNome(String pote) {
-        this.pote_nome = pote;
+    public void setPote(String pote) {
+        this.pote = pote;
     }
 
     public Set<Jogador> getJogadores() {
@@ -50,7 +50,7 @@ public class Pote implements Serializable {
     public String toString() {
         return "Pote{" +
                 "id=" + id +
-                ", pote='" + pote_nome + '\'' +
+                ", pote='" + pote + '\'' +
                 ", jogadores=" + jogadores +
                 '}';
     }
