@@ -34,4 +34,14 @@ public class JogadorServiceImpl implements JogadorService {
     public void addNewJogador(Jogador jogador) {
         this.jogadorRepository.save(jogador);
     }
+
+    @Override
+    public void updateJogador(long id, Jogador jogador) {
+        jogadorRepository.findById(id).map(jogadorExistente -> {
+            jogadorExistente.setNome(jogador.getNome());
+            jogadorExistente.setPote(jogador.getPote());
+            jogadorExistente.setTime(jogador.getTime());
+            return jogadorRepository.save(jogadorExistente);
+        });
+    }
 }

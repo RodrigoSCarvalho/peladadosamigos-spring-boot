@@ -15,4 +15,6 @@ public interface JogadorService {
     Optional<Jogador> findJogadorByNome(String nome);
 
     void addNewJogador(Jogador jogador);
+
+    void updateJogador(long id, Jogador jogador);
 }

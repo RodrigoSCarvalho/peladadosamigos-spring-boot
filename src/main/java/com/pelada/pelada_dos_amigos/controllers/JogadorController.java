@@ -42,4 +42,13 @@ public class JogadorController {
         this.jogadorService.addNewJogador(jogador);
         return new ResponseEntity<>(jogador, HttpStatus.CREATED);
     }
+
+    //************** PUT ****************
+
+    @PutMapping("jogador/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity updateJogador(@PathVariable long id, @RequestBody Jogador jogador){
+        this.jogadorService.updateJogador(id, jogador);
+        return new ResponseEntity<>(jogador, HttpStatus.OK);
+    }
 }
