@@ -1,5 +1,6 @@
 package com.pelada.pelada_dos_amigos.services;
 
+import com.pelada.pelada_dos_amigos.entities.Jogador;
 import com.pelada.pelada_dos_amigos.entities.Pote;
 
 import java.util.List;
@@ -11,4 +12,8 @@ public interface PoteService {
     Optional<Pote> findPoteByPote(String nome);
 
     Optional<Pote> findPoteById(Long id);
+
+    List<Jogador> findJogadoresInPote(Long id);
+
+
 }

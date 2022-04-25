@@ -28,9 +28,10 @@ public class JogadorController {
     public Optional<Jogador> getJogadorById(@PathVariable long id){
         return this.jogadorService.findJogadorById(id);
     }
-    @RequestMapping( method = RequestMethod.GET )
+
+    @GetMapping("/jogador/nome/{nome}")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public Optional<Jogador> getJogadorByNome(@RequestParam(value = "nome") String nome){
+    public Optional<Jogador> getJogadorByNome(@PathVariable String nome){
         return this.jogadorService.findJogadorByNome(nome);
     }
 

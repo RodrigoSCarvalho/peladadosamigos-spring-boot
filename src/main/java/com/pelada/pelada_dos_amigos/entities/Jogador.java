@@ -1,5 +1,7 @@
 package com.pelada.pelada_dos_amigos.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -55,6 +57,12 @@ public class Jogador implements Serializable {
         this.time = time;
     }
 
+    //@JsonProperty("pote")
+    //private void unpackNested(Integer pote_id) {
+    //    this.pote = new Pote();
+    //    pote.setId(Long.valueOf(pote_id));
+    //}
+
     @Override
     public String toString() {
         return "Jogador{" +
@@ -63,5 +71,8 @@ public class Jogador implements Serializable {
                 ", pote=" + pote +
                 ", time=" + time +
                 '}';
+    }
+
+    public Jogador() {
     }
 }

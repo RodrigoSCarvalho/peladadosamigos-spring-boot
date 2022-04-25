@@ -51,4 +51,10 @@ public class Time implements Serializable {
                 ", jogadores=" + jogadores +
                 '}';
     }
+
+    public Time(Long id, String time, Set<Jogador> jogadores) {
+        this.id = id;
+        this.time = time;
+        this.jogadores = jogadores;
+    }
 }

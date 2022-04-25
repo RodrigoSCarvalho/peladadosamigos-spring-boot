@@ -54,4 +54,10 @@ public class Pote implements Serializable {
                 ", jogadores=" + jogadores +
                 '}';
     }
+
+    public Pote(Long id, String pote, Set<Jogador> jogadores) {
+        this.id = id;
+        this.pote = pote;
+        this.jogadores = jogadores;
+    }
 }
