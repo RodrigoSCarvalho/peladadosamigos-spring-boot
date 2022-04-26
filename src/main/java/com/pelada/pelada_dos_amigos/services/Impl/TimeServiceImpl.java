@@ -1,6 +1,7 @@
 package com.pelada.pelada_dos_amigos.services.Impl;
 
 
+import com.pelada.pelada_dos_amigos.entities.Jogador;
 import com.pelada.pelada_dos_amigos.entities.Time;
 import com.pelada.pelada_dos_amigos.repostiories.TimeRepository;
 import com.pelada.pelada_dos_amigos.services.TimeService;
@@ -29,5 +30,10 @@ public class TimeServiceImpl implements TimeService {
     @Override
     public Optional<Time> getTimeByTime(String time) {
         return this.timeRepository.findByTime(time);
+    }
+
+    @Override
+    public List<Jogador> getJogadoresInTime(Long id) {
+        return this.timeRepository.findJogadoresInTime(id);
     }
 }

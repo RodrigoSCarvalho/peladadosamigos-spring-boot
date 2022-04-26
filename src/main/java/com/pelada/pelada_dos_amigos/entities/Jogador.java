@@ -57,11 +57,17 @@ public class Jogador implements Serializable {
         this.time = time;
     }
 
-    //@JsonProperty("pote")
-    //private void unpackNested(Integer pote_id) {
-    //    this.pote = new Pote();
-    //    pote.setId(Long.valueOf(pote_id));
-    //}
+    @JsonProperty("pote")
+    private void associarPote(Integer pote_id) {
+        this.pote = new Pote();
+        pote.setId(Long.valueOf(pote_id));
+    }
+
+    @JsonProperty("time")
+    private void associarTime(Integer time_id) {
+        this.time = new Time();
+        time.setId(Long.valueOf(time_id));
+    }
 
     @Override
     public String toString() {

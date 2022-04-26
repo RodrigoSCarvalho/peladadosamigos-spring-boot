@@ -1,5 +1,6 @@
 package com.pelada.pelada_dos_amigos.controllers;
 
+import com.pelada.pelada_dos_amigos.entities.Jogador;
 import com.pelada.pelada_dos_amigos.entities.Time;
 import com.pelada.pelada_dos_amigos.services.TimeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +31,11 @@ public class TimeController {
     @ResponseStatus(HttpStatus.ACCEPTED)
     public Optional<Time> getTimeByNome(@PathVariable String time){
         return this.timeService.getTimeByTime(time);
+    }
+
+    @GetMapping("time/{id}/jogadores")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public List<Jogador> getJogadoresInTime(@PathVariable Long id){
+        return this.timeService.getJogadoresInTime(id);
     }
 }

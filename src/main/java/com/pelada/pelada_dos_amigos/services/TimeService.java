@@ -1,5 +1,6 @@
 package com.pelada.pelada_dos_amigos.services;
 
+import com.pelada.pelada_dos_amigos.entities.Jogador;
 import com.pelada.pelada_dos_amigos.entities.Time;
 
 import java.util.List;
@@ -11,4 +12,6 @@ public interface TimeService {
     Optional<Time> getTimeById(Long id);
 
     Optional<Time> getTimeByTime(String time);
+
+    List<Jogador> getJogadoresInTime(Long id);
 }

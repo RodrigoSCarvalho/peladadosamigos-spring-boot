@@ -19,6 +19,10 @@ public class Time implements Serializable {
     @OneToMany(mappedBy = "time")
     private Set<Jogador> jogadores;
 
+    public Time() {
+
+    }
+
     public Long getId() {
         return id;
     }
