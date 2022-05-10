@@ -1,5 +1,6 @@
 package com.pelada.pelada_dos_amigos.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
@@ -17,10 +18,12 @@ public class Jogador implements Serializable {
 
     private String nome;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name="pote_id")
     private Pote pote;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "time_id")
     private Time time;

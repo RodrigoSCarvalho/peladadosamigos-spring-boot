@@ -12,6 +12,7 @@ import java.util.Optional;
 
 import static org.springframework.http.HttpStatus.ACCEPTED;
 
+@CrossOrigin
 @RestController
 public class PoteController {
 
